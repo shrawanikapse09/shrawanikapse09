@@ -1,0 +1,279 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 430" width="100%" height="100%">
+  <defs>
+    <linearGradient id="about_bg_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b16"/>
+      <stop offset="50%" stop-color="#0a1024"/>
+      <stop offset="100%" stop-color="#070b16"/>
+    </linearGradient>
+
+    <linearGradient id="about_border_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#247bff" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#ff354f" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#247bff" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <linearGradient id="about_card_border" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#247bff" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+
+    <linearGradient id="about_bar_fill" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#247bff"/>
+      <stop offset="100%" stop-color="#ff354f"/>
+    </linearGradient>
+
+    <radialGradient id="about_glow" cx="80%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#247bff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#247bff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <style>
+    /* Slide transition keyframes - only animate opacity and translateX without overriding parent position */
+    @keyframes about_slide1 {
+      0%, 28% { opacity: 1; transform: translateX(0); }
+      33.3%, 100% { opacity: 0; transform: translateX(-12px); }
+    }
+    @keyframes about_slide2 {
+      0%, 28% { opacity: 0; transform: translateX(12px); }
+      33.3%, 61.3% { opacity: 1; transform: translateX(0); }
+      66.6%, 100% { opacity: 0; transform: translateX(-12px); }
+    }
+    @keyframes about_slide3 {
+      0%, 61.3% { opacity: 0; transform: translateX(12px); }
+      66.6%, 94.6% { opacity: 1; transform: translateX(0); }
+      100% { opacity: 0; transform: translateX(-12px); }
+    }
+
+    /* Segment progress bar animations */
+    @keyframes about_bar1 {
+      0% { width: 0px; opacity: 1; }
+      28% { width: 96px; opacity: 1; }
+      33.3%, 100% { width: 96px; opacity: 0.35; }
+    }
+    @keyframes about_bar2 {
+      0%, 33.3% { width: 0px; opacity: 0.35; }
+      34% { opacity: 1; }
+      61.3% { width: 96px; opacity: 1; }
+      66.6%, 100% { width: 96px; opacity: 0.35; }
+    }
+    @keyframes about_bar3 {
+      0%, 66.6% { width: 0px; opacity: 0.35; }
+      67% { opacity: 1; }
+      94.6% { width: 96px; opacity: 1; }
+      100% { width: 0px; opacity: 0.35; }
+    }
+
+    .about_font_main {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+    }
+    .about_font_mono {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    }
+
+    .about_s1 { animation: about_slide1 12s infinite; }
+    .about_s2 { animation: about_slide2 12s infinite; }
+    .about_s3 { animation: about_slide3 12s infinite; }
+
+    .about_b1 { animation: about_bar1 12s infinite; }
+    .about_b2 { animation: about_bar2 12s infinite; }
+    .about_b3 { animation: about_bar3 12s infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .about_s1, .about_s2, .about_s3, .about_b1, .about_b2, .about_b3 {
+        animation: none !important;
+      }
+      .about_s1 { opacity: 1 !important; transform: none !important; }
+      .about_s2, .about_s3 { display: none; }
+      .about_b1 { width: 96px !important; opacity: 1 !important; }
+      .about_b2, .about_b3 { width: 96px !important; opacity: 0.35 !important; }
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="850" height="430" rx="20" fill="url(#about_bg_grad)" stroke="url(#about_border_grad)" stroke-width="1.2"/>
+  <circle cx="680" cy="180" r="220" fill="url(#about_glow)"/>
+
+  <!-- ================= SECTION HEADER ================= -->
+  <g transform="translate(40, 32)">
+    <rect width="180" height="22" rx="11" fill="#0d182e" stroke="#247bff" stroke-width="0.8"/>
+    <text class="about_font_mono" x="14" y="15" fill="#60a5fa" font-size="10" font-weight="700" letter-spacing="1">ABOUT &amp; ARCHITECTURE</text>
+    <text class="about_font_main" x="0" y="44" fill="#ffffff" font-size="20" font-weight="800" letter-spacing="0.5">CORE CAPABILITIES &amp; PASSIONS</text>
+  </g>
+
+  <!-- ================= LEFT COLUMN: 3 CAPABILITY CARDS ================= -->
+  <!-- Left column width = 370, spacing between cards = 14px, card height = 92px -->
+  <!-- Card 1: AI & Intelligent Systems -->
+  <g transform="translate(40, 92)">
+    <rect width="370" height="92" rx="16" fill="#0c1527" stroke="url(#about_card_border)" stroke-width="1.2"/>
+    <!-- Icon Box -->
+    <rect x="14" y="16" width="40" height="40" rx="10" fill="#112240" stroke="#247bff" stroke-width="0.8"/>
+    <path d="M 28 28 A 6 6 0 1 0 40 28 A 6 6 0 1 0 28 28 M 34 22 L 34 26 M 34 30 L 34 34 M 26 36 L 30 36 M 38 36 L 42 36" fill="none" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round"/>
+    <text class="about_font_main" x="66" y="32" fill="#ffffff" font-size="14.5" font-weight="700">AI &amp; Intelligent Systems</text>
+    <text class="about_font_main" x="66" y="52" fill="#94a3b8" font-size="11.5">Architecting RAG pipelines with semantic chunking,</text>
+    <text class="about_font_main" x="66" y="68" fill="#94a3b8" font-size="11.5">vector search &amp; zero-hallucination grounding.</text>
+  </g>
+
+  <!-- Card 2: Full-Stack Web Engineering -->
+  <g transform="translate(40, 198)">
+    <rect width="370" height="92" rx="16" fill="#0c1527" stroke="url(#about_card_border)" stroke-width="1.2"/>
+    <!-- Icon Box -->
+    <rect x="14" y="16" width="40" height="40" rx="10" fill="#112240" stroke="#247bff" stroke-width="0.8"/>
+    <path d="M 26 29 L 31 24 L 26 38 M 42 29 L 37 24 L 42 38 M 36 23 L 32 39" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round"/>
+    <text class="about_font_main" x="66" y="32" fill="#ffffff" font-size="14.5" font-weight="700">Full-Stack Web Engineering</text>
+    <text class="about_font_main" x="66" y="52" fill="#94a3b8" font-size="11.5">Developing high-throughput REST APIs with FastAPI</text>
+    <text class="about_font_main" x="66" y="68" fill="#94a3b8" font-size="11.5">and responsive, reactive client systems with React.</text>
+  </g>
+
+  <!-- Card 3: Impact-Driven Solutions -->
+  <g transform="translate(40, 304)">
+    <rect width="370" height="92" rx="16" fill="#0c1527" stroke="url(#about_card_border)" stroke-width="1.2"/>
+    <!-- Icon Box -->
+    <rect x="14" y="16" width="40" height="40" rx="10" fill="#1f142b" stroke="#ff354f" stroke-width="0.8"/>
+    <path d="M 34 24 C 34 24 40 27 40 34 L 28 34 C 28 27 34 24 34 24 Z M 31 34 L 27 39 M 37 34 L 41 39" fill="none" stroke="#f43f5e" stroke-width="1.6" stroke-linecap="round"/>
+    <text class="about_font_main" x="66" y="32" fill="#ffffff" font-size="14.5" font-weight="700">Impact-Driven Products</text>
+    <text class="about_font_main" x="66" y="52" fill="#94a3b8" font-size="11.5">Building production-tested systems like StudySage</text>
+    <text class="about_font_main" x="66" y="68" fill="#94a3b8" font-size="11.5">&amp; Semantic Resume Analyzer to solve real tasks.</text>
+  </g>
+
+  <!-- ================= RIGHT COLUMN: 3-SLIDE CAROUSEL ================= -->
+  <!-- Aligned at x=440, y=92, width=370, height=304 (identical corner radius rx=16) -->
+  <g transform="translate(440, 92)">
+    <!-- Outer Card Frame -->
+    <rect width="370" height="304" rx="16" fill="#0a1224" stroke="url(#about_card_border)" stroke-width="1.2"/>
+
+    <!-- 1. CAROUSEL TOP HEADER ROW -->
+    <g transform="translate(20, 16)">
+      <!-- Carousel Section Label -->
+      <rect width="140" height="22" rx="6" fill="#0f1f3d" stroke="#247bff" stroke-width="0.8"/>
+      <text class="about_font_mono" x="10" y="15" fill="#60a5fa" font-size="10" font-weight="700" letter-spacing="0.5">INTEREST CAROUSEL</text>
+
+      <!-- Timer Badge (Placed on same row with generous 110px gap) -->
+      <g transform="translate(250, 0)">
+        <rect width="80" height="22" rx="6" fill="#111c33" stroke="#1e293b" stroke-width="0.8"/>
+        <text class="about_font_mono" x="12" y="15" fill="#94a3b8" font-size="9.5" font-weight="600">⏱ 4s / SLIDE</text>
+      </g>
+    </g>
+
+    <!-- Subtle divider line below header -->
+    <line x1="20" y1="48" x2="350" y2="48" stroke="#1e293b" stroke-width="0.8"/>
+
+    <!-- 2. SLIDE CONTENTS CONTAINER (Isolated static translation at y=58) -->
+    <g transform="translate(20, 58)">
+
+      <!-- SLIDE 1: AI, NLP & Intelligent Systems -->
+      <g class="about_s1">
+        <!-- Slide Hierarchy 1: Category Tag -->
+        <rect x="0" y="0" width="185" height="22" rx="6" fill="#1e1322" stroke="#ff354f" stroke-width="0.8"/>
+        <circle cx="11" cy="11" r="3.5" fill="#ff354f"/>
+        <text class="about_font_mono" x="22" y="15" fill="#f43f5e" font-size="9.5" font-weight="700">01 / 03  ●  PRIMARY FOCUS</text>
+
+        <!-- Slide Hierarchy 2: Main Title -->
+        <text class="about_font_main" x="0" y="44" fill="#ffffff" font-size="17" font-weight="800">AI, NLP &amp; Intelligent Systems</text>
+
+        <!-- Slide Hierarchy 3: Natural Multi-line Description -->
+        <text class="about_font_main" x="0" y="68" fill="#cbd5e1" font-size="12" font-weight="400">Deeply passionate about natural language understanding,</text>
+        <text class="about_font_main" x="0" y="86" fill="#cbd5e1" font-size="12" font-weight="400">transformer mechanics, and semantic vectors.</text>
+        <text class="about_font_main" x="0" y="104" fill="#94a3b8" font-size="12">Exploring how generative agents understand complex</text>
+        <text class="about_font_main" x="0" y="122" fill="#94a3b8" font-size="12">context beyond basic surface keyword matching.</text>
+
+        <!-- Slide Hierarchy 4: Skill Tags -->
+        <g transform="translate(0, 140)">
+          <rect width="94" height="24" rx="6" fill="#0f2242" stroke="#247bff" stroke-width="0.6"/>
+          <text class="about_font_mono" x="9" y="16" fill="#93c5fd" font-size="10">#NLPModels</text>
+          
+          <rect x="102" width="102" height="24" rx="6" fill="#0f2242" stroke="#247bff" stroke-width="0.6"/>
+          <text class="about_font_mono" x="111" y="16" fill="#93c5fd" font-size="10">#Transformers</text>
+          
+          <rect x="212" width="98" height="24" rx="6" fill="#0f2242" stroke="#247bff" stroke-width="0.6"/>
+          <text class="about_font_mono" x="221" y="16" fill="#93c5fd" font-size="10">#Embeddings</text>
+        </g>
+      </g>
+
+      <!-- SLIDE 2: Full Stack Web Development -->
+      <g class="about_s2">
+        <!-- Slide Hierarchy 1: Category Tag -->
+        <rect x="0" y="0" width="195" height="22" rx="6" fill="#0d1f38" stroke="#247bff" stroke-width="0.8"/>
+        <circle cx="11" cy="11" r="3.5" fill="#247bff"/>
+        <text class="about_font_mono" x="22" y="15" fill="#60a5fa" font-size="9.5" font-weight="700">02 / 03  ●  WEB ENGINEERING</text>
+
+        <!-- Slide Hierarchy 2: Main Title -->
+        <text class="about_font_main" x="0" y="44" fill="#ffffff" font-size="17" font-weight="800">Full Stack Web Development</text>
+
+        <!-- Slide Hierarchy 3: Natural Multi-line Description -->
+        <text class="about_font_main" x="0" y="68" fill="#cbd5e1" font-size="12" font-weight="400">Bridging powerful AI computation with accessible,</text>
+        <text class="about_font_main" x="0" y="86" fill="#cbd5e1" font-size="12" font-weight="400">lightning-fast user interfaces.</text>
+        <text class="about_font_main" x="0" y="104" fill="#94a3b8" font-size="12">From designing lightweight asynchronous FastAPI backends</text>
+        <text class="about_font_main" x="0" y="122" fill="#94a3b8" font-size="12">to crafting interactive, component-driven React frontends.</text>
+
+        <!-- Slide Hierarchy 4: Skill Tags -->
+        <g transform="translate(0, 140)">
+          <rect width="82" height="24" rx="6" fill="#0f2242" stroke="#247bff" stroke-width="0.6"/>
+          <text class="about_font_mono" x="9" y="16" fill="#93c5fd" font-size="10">#FastAPI</text>
+          
+          <rect x="90" width="86" height="24" rx="6" fill="#0f2242" stroke="#247bff" stroke-width="0.6"/>
+          <text class="about_font_mono" x="99" y="16" fill="#93c5fd" font-size="10">#ReactJS</text>
+          
+          <rect x="184" width="108" height="24" rx="6" fill="#0f2242" stroke="#247bff" stroke-width="0.6"/>
+          <text class="about_font_mono" x="193" y="16" fill="#93c5fd" font-size="10">#FullStackWeb</text>
+        </g>
+      </g>
+
+      <!-- SLIDE 3: RAG & LLM Architectures -->
+      <g class="about_s3">
+        <!-- Slide Hierarchy 1: Category Tag -->
+        <rect x="0" y="0" width="205" height="22" rx="6" fill="#18122c" stroke="#a855f7" stroke-width="0.8"/>
+        <circle cx="11" cy="11" r="3.5" fill="#a855f7"/>
+        <text class="about_font_mono" x="22" y="15" fill="#c084fc" font-size="9.5" font-weight="700">03 / 03  ●  INTELLIGENT SYSTEMS</text>
+
+        <!-- Slide Hierarchy 2: Main Title -->
+        <text class="about_font_main" x="0" y="44" fill="#ffffff" font-size="17" font-weight="800">RAG &amp; LLM Architectures</text>
+
+        <!-- Slide Hierarchy 3: Natural Multi-line Description -->
+        <text class="about_font_main" x="0" y="68" fill="#cbd5e1" font-size="12" font-weight="400">Engineering document question-answering systems</text>
+        <text class="about_font_main" x="0" y="86" fill="#cbd5e1" font-size="12" font-weight="400">grounded strictly in verified sources.</text>
+        <text class="about_font_main" x="0" y="104" fill="#94a3b8" font-size="12">Automated document parsing (PDF/PPTX), semantic</text>
+        <text class="about_font_main" x="0" y="122" fill="#94a3b8" font-size="12">chunking, ChromaDB vector indexing &amp; Gemini responses.</text>
+
+        <!-- Slide Hierarchy 4: Skill Tags -->
+        <g transform="translate(0, 140)">
+          <rect width="94" height="24" rx="6" fill="#1b122e" stroke="#a855f7" stroke-width="0.6"/>
+          <text class="about_font_mono" x="9" y="16" fill="#d8b4fe" font-size="10">#ChromaDB</text>
+          
+          <rect x="102" width="100" height="24" rx="6" fill="#1b122e" stroke="#a855f7" stroke-width="0.6"/>
+          <text class="about_font_mono" x="111" y="16" fill="#d8b4fe" font-size="10">#LangChain</text>
+          
+          <rect x="210" width="102" height="24" rx="6" fill="#1b122e" stroke="#a855f7" stroke-width="0.6"/>
+          <text class="about_font_mono" x="219" y="16" fill="#d8b4fe" font-size="10">#GoogleGemini</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- 3. BOTTOM PROGRESS INDICATOR DOCKS -->
+    <g transform="translate(20, 244)">
+      <!-- Divider line -->
+      <line x1="0" y1="0" x2="330" y2="0" stroke="#1e293b" stroke-width="0.8"/>
+
+      <!-- Track 1: NLP -->
+      <g transform="translate(0, 14)">
+        <rect width="96" height="4" rx="2" fill="#1e293b"/>
+        <rect class="about_b1" height="4" rx="2" fill="url(#about_bar_fill)"/>
+        <text class="about_font_mono" x="0" y="18" fill="#64748b" font-size="9" font-weight="600">01 NLP</text>
+      </g>
+
+      <!-- Track 2: WEB DEV -->
+      <g transform="translate(117, 14)">
+        <rect width="96" height="4" rx="2" fill="#1e293b"/>
+        <rect class="about_b2" height="4" rx="2" fill="url(#about_bar_fill)"/>
+        <text class="about_font_mono" x="0" y="18" fill="#64748b" font-size="9" font-weight="600">02 WEB DEV</text>
+      </g>
+
+      <!-- Track 3: RAG/LLM -->
+      <g transform="translate(234, 14)">
+        <rect width="96" height="4" rx="2" fill="#1e293b"/>
+        <rect class="about_b3" height="4" rx="2" fill="url(#about_bar_fill)"/>
+        <text class="about_font_mono" x="0" y="18" fill="#64748b" font-size="9" font-weight="600">03 RAG/LLM</text>
+      </g>
+    </g>
+  </g>
+</svg>
