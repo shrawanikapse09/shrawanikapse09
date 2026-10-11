@@ -67,6 +67,6 @@
 
 ⭐ **"Passionate about building intelligent systems that make a difference."** ⭐
 
-<sub>Designed with high-performance animated SVG architecture • Deep Navy `#070b16` &amp; Electric Blue `#247bff`</sub>
+
 
 </div>
